@@ -13,10 +13,14 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
+            $table->string('nome', 100)->nullable(false);
+            $table->string('email', 100)->nullable(false)->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            $table->string('password'); // ou $table->text('password');
+            $table->string('curso', 2)->nullable(false);
+            $table->string('matricula', 19)->unique(); // Limita a matrícula a 19 caracteres
+            $table->string('cpf', 11)->unique(); // Limita o CPF a 11 caracteres
+            $table->tinyInteger('tipo'); //aluno = 0, professor = 1, monitor = 2
             $table->rememberToken();
             $table->timestamps();
         });

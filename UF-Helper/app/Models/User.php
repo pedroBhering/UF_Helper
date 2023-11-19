@@ -18,9 +18,13 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'nome',
         'email',
         'password',
+        'matricula',
+        'curso',
+        'cpf',
+        'tipo', //pode ser professor, aluno ou monitor
     ];
 
     /**
@@ -41,5 +45,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
+    ];
+
+    
+    public static $rules = [
+        'matricula' => 'numeric|digits:19',
+        'cpf' => 'numeric|digits:11',
+        'nome' => 'string|max:100',
+        'email' => 'string|max:100',
+        'curso' => 'string|uppercase',
+        // Adicione outras regras conforme necessário
     ];
 }
