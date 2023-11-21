@@ -27,7 +27,7 @@ class UserFactory extends Factory
             'password' => $this->faker->password(),
             'remember_token' => Str::random(10),
             'matricula' => fake()->unique()->numberBetween(200000000, 202199999),
-            'curso' => Str::random(1),
+            'curso' => chr(rand(65,90)),
             'cpf' => fake()->unique()->numberBetween(10000000000, 99999999999),
             'tipo' => fake()->numberBetween(0,2),
         ];
