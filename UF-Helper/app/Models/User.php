@@ -56,4 +56,9 @@ class User extends Authenticatable
         'curso' => 'string|uppercase',
         // Adicione outras regras conforme necessário
     ];
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
 }

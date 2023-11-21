@@ -12,8 +12,20 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('disciplinas', function (Blueprint $table) {
+            $table->unsignedBigInteger('depto_id');
+            $table->foreign('depto_id')->references('id')->on('deptos')->onDelete('cascade');
+            //relacionamento com a tabela de departamentos
+            // $table->foreignId('depto_id')->constrained('deptos');
+            //adaptar para os outros relacionamentos
             $table->id();
             $table->timestamps();
+            $table->string('nome');
+            $table->string('codigo');
+            $table->string('ementa');
+            $table->string('bibliografia');
+            $table->string('carga_horaria');
+            $table->string('creditos');
+            $table->string('pre_requisitos');
         });
     }
 
