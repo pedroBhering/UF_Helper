@@ -15,16 +15,16 @@ return new class extends Migration
             $table->unsignedBigInteger('depto_id');
             $table->foreign('depto_id')->references('id')->on('deptos')->onDelete('cascade');
             //relacionamento com a tabela de departamentos
-            // $table->foreignId('depto_id')->constrained('deptos');
+            //$table->foreignId('depto_id')->constrained('deptos');
             //adaptar para os outros relacionamentos
             $table->id();
             $table->timestamps();
             $table->string('nome');
-            $table->string('codigo');
+            $table->string('codigo',6)->unique();
             $table->string('ementa');
             $table->string('bibliografia');
             $table->string('carga_horaria');
-            $table->string('creditos');
+            $table->tinyInteger('creditos');
             $table->string('pre_requisitos');
         });
     }

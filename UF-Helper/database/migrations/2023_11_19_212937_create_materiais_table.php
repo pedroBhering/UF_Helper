@@ -12,8 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('materiais', function (Blueprint $table) {
+            $table->unsignedBigInteger('disciplina_id');
+            $table->foreign('disciplina_id')->references('id')->on('disciplinas')->onDelete('cascade');
+
             $table->id();
             $table->timestamps();
+            $table->string('nome', 100);
+            $table->string('descricao', 100);
+            $table->string('tipo', 10);
+            $table->string('link', 100);
+            $table->string('autor', 100);
         });
     }
 

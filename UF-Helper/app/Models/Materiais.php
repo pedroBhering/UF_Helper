@@ -14,9 +14,7 @@ class Materiais extends Model
         'descricao',
         'tipo',
         'link',
-        'professor',
-        'monitor',
-        'alunos',
+        'autor',
     ];
 
     public static $rules = [
