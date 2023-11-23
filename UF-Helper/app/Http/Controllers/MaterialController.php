@@ -11,8 +11,9 @@ class MaterialController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-        //
+    {   
+        $materiais = [];
+        return view('materiais.index',compact('materiais'));
     }
 
     /**
@@ -20,7 +21,8 @@ class MaterialController extends Controller
      */
     public function create()
     {
-        //
+        $material = new Materiais();
+        return view('materiais.create', compact('material'));
     }
 
     /**
@@ -28,15 +30,17 @@ class MaterialController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validated();
+        Materiais::create($data);
+        return redirect()->route('materiais.index')->with('success', true);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Materiais $materiais)
+    public function show(Materiais $materiai)
     {
-        //
+        return view('materiais.show', compact('materiai'));
     }
 
     /**
@@ -44,7 +48,7 @@ class MaterialController extends Controller
      */
     public function edit(Materiais $materiais)
     {
-        //
+        return view('materiais.edit', compact('materiais'));
     }
 
     /**
@@ -52,7 +56,9 @@ class MaterialController extends Controller
      */
     public function update(Request $request, Materiais $materiais)
     {
-        //
+        $data = $request->validated();
+        $materiais->update($data);
+        return redirect()->route('materiais.index')->with('success', true);
     }
 
     /**
@@ -60,6 +66,14 @@ class MaterialController extends Controller
      */
     public function destroy(Materiais $materiais)
     {
-        //
+        $materiais->delete();
+        return redirect()->route('materiais.index')->with('success', true);
+    }
+
+    public function materiaisPorDisciplina($disciplina_id)
+    {
+        $materiais = Materiais::where('disciplina_id', $disciplina_id)->get();
+
+        return view('materiais.index', compact('materiais'));
     }
 }

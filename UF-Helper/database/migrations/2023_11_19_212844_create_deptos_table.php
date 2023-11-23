@@ -14,8 +14,7 @@ return new class extends Migration
         Schema::create('deptos', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('nome');
-            $table->json('disciplinas');           
+            $table->string('nome');        
         });
     }
 
