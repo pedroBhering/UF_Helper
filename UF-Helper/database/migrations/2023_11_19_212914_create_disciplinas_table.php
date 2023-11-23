@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('codigo',6)->unique();
             $table->string('ementa');
             $table->string('bibliografia');
-            $table->string('carga_horaria');
+            $table->tinyInteger('carga_horaria');
             $table->tinyInteger('creditos');
             $table->string('pre_requisitos');
         });

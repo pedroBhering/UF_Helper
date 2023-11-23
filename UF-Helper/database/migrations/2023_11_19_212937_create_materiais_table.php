@@ -15,6 +15,9 @@ return new class extends Migration
             $table->unsignedBigInteger('disciplina_id');
             $table->foreign('disciplina_id')->references('id')->on('disciplinas')->onDelete('cascade');
 
+            $table->unsignedBigInteger('autor_id');
+            $table->foreign('autor_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade')->where('tipo', 1);
+
             $table->id();
             $table->timestamps();
             $table->string('nome', 100);

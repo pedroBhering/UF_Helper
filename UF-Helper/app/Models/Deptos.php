@@ -11,12 +11,14 @@ class Deptos extends Model
 
     protected $fillable = [
         'nome',
-        'disciplinas',
+        'local',
+        'email',
     ];
 
     public static $rules = [
         'nome' => 'string|max:100',
-        'disciplinas' => 'string|max:100',
+        'local' => 'string|max:100',
+        'email' => 'string|max:100',
         // Adicione outras regras conforme necessário
     ];
 
