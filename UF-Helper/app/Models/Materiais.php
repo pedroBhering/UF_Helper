@@ -25,12 +25,25 @@ class Materiais extends Model
         // Adicione outras regras conforme necessário
     ];
 
+    public function rules()
+    {
+        return [
+            'autor_id' => ['required', function ($attribute, $value, $fail) {
+                $user = User::find($value);
+                if ($user->tipo != 1) {
+                    $fail('O autor deve ser um professor.');
+                }
+            }],
+        ];
+    }
+
     public function disciplina()
     {
-        return $this->belongsTo
-        (
-            Disciplinas::class,
-            'id'
-        );
+        return $this->belongsTo(Disciplinas::class,'id');
+    }
+
+    public function autor()
+    {
+        return $this->belongsTo(User::class, 'autor_id');
     }
 }

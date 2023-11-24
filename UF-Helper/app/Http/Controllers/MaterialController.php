@@ -30,8 +30,18 @@ class MaterialController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->validated();
-        Materiais::create($data);
+        $material = new Materiais();
+        $material->fill($request->all());
+
+        // Valida se o autor é um professor
+        $material->validate();
+
+        if ($material->errors()->has('autor_id')) {
+            return response()->json($material->errors(), 422);
+        }
+
+        $material->save();
+
         return redirect()->route('materiais.index')->with('success', true);
     }
 
