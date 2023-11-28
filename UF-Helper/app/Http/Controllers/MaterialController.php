@@ -40,6 +40,22 @@ class MaterialController extends Controller
             return response()->json($material->errors(), 422);
         }
 
+        if ($request->hasFile('pdf')) {
+            $pdf = $request->file('pdf');
+            $fileName = $pdf->getClientOriginalName();
+            $path = $pdf->storeAs('public/materiais', $fileName);
+    
+            $material->link = asset($path);
+        }
+
+        if ($request->hasFile('video')) {
+            $video = $request->file('video');
+            $fileName = $video->getClientOriginalName();
+            $path = $video->storeAs('public/videos', $fileName);
+        
+            $material->link = asset($path);
+        }
+
         $material->save();
 
         return redirect()->route('materiais.index')->with('success', true);

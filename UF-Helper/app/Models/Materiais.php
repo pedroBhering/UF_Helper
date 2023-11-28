@@ -14,7 +14,7 @@ class Materiais extends Model
         'descricao',
         'tipo',
         'link',
-        'autor',
+        'autor_id',
     ];
 
     public static $rules = [
@@ -22,6 +22,8 @@ class Materiais extends Model
         'descricao' => 'string|max:100',
         'tipo' => 'string|max:10',
         'link' => 'string|max:100',
+        'autor_id' => 'required|integer',
+        'video' => 'string| mimes:mp4,mpeg,avi|max:2048',
         // Adicione outras regras conforme necessário
     ];
 

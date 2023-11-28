@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreign('disciplina_id')->references('id')->on('disciplinas')->onDelete('cascade');
 
             $table->unsignedBigInteger('autor_id');
+            $table->foreign('autor_id')->references('id')->on('users')->onDelete('cascade');
             //sera preenchido com os dados do usuario logado, que sera o autor do material e apenas
             //professores podem criar materiais e poderam ter acesso ao botao de criar material
 
@@ -25,7 +26,6 @@ return new class extends Migration
             $table->string('descricao', 100);
             $table->string('tipo', 10);
             $table->string('link', 100);
-            $table->string('autor', 100);
         });
     }
 
