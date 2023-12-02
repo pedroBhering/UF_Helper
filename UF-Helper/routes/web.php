@@ -39,6 +39,6 @@ Route::get('/materiais/{disciplinaId}', [MaterialController::class, 'index'])->n
 Route::get('/disciplinas/{deptoId}', [DisciplinaController::class, 'index'])->name('disciplinas.index');
 
 // Department Routes
-Route::get('/deptos', [App\Http\Controllers\DeptoController::class, 'index'])->name('deptos.index');
+Route::get('/deptos', [DeptoController::class, 'index'])->name('deptos.index');
 
 require __DIR__.'/auth.php';

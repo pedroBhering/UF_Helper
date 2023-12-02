@@ -24,7 +24,7 @@ class User extends Authenticatable
         'matricula',
         'curso',
         'cpf',
-        'tipo', //pode ser professor, aluno ou monitor
+        'tipo', //aluno = 0, professor = 1, monitor = 2
     ];
 
     /**

@@ -12,6 +12,10 @@
             <h1>Aqui é o Conteudo</h1>
             <p>Pode colocar tags com o estilo que quiser</p>
             <p>Recomendo usar essas classes que coloquei</p>
+            {{-- Exibir os departamentos --}}
+            @foreach($deptos as $depto)
+                <p>{{ $depto->nome }}</p>
+            @endforeach
         </div>
     </div>
 </div>
