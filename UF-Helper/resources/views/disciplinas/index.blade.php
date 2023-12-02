@@ -12,6 +12,10 @@
                     <button type="submit">Ver Materiais</button>
                 </a>
             </li>
+            @can('create', $user)
+                <a href="{{ route('disciplinas.index', $disciplina->id) }}" class="btn btn-sm btn-edit"><i
+                        class="fas fa-pen"></i></a>
+            @endcan
         @endforeach
     </ul>
 @endsection

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Disciplinas;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DisciplinaController extends Controller
 {
@@ -12,8 +13,9 @@ class DisciplinaController extends Controller
      */
     public function index($depto_id)
     {
+        $user = Auth::user();
         $disciplinas = Disciplinas::where('depto_id', $depto_id)->get();
-        return view('disciplinas.index', compact('disciplinas'));
+        return view('disciplinas.index', compact('disciplinas', 'user'));
     }
 
     /**

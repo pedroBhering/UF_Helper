@@ -27,6 +27,10 @@ class User extends Authenticatable
         'tipo', //aluno = 0, professor = 1, monitor = 2
     ];
 
+    const ALUNO = 0;
+    const PROFESSOR = 1;
+    const MONITOR = 2;
+
     /**
      * The attributes that should be hidden for serialization.
      *
