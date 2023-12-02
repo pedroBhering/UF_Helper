@@ -41,4 +41,6 @@ Route::get('/disciplinas/{deptoId}', [DisciplinaController::class, 'index'])->na
 // Department Routes
 Route::get('/deptos', [DeptoController::class, 'index'])->name('deptos.index');
 
+Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
+
 require __DIR__.'/auth.php';
