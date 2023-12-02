@@ -19,7 +19,7 @@ class Materiais extends Model
 
     public static $rules = [
         'nome' => 'string|max:100',
-        'descricao' => 'string|max:100',
+        'descricao' => 'string|max:500',
         'tipo' => 'string|max:10',
         'link' => 'string|max:100',
         'autor_id' => 'required|integer',

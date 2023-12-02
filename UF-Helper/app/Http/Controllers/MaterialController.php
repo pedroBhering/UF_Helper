@@ -10,9 +10,9 @@ class MaterialController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {   
-        $materiais = [];
+    public function index($disciplina_id)
+    {
+        $materiais = Materiais::where('disciplina_id', $disciplina_id)->get();
         return view('materiais.index',compact('materiais'));
     }
 

@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MaterialController;
+use App\Http\Controllers\DisciplinaController;
+use App\Http\Controllers\DeptoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,5 +30,15 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+// Material Routes
+// Route::get('/materiais', [MaterialController::class, 'index'])->name('materiais.index');
+Route::get('/materiais/{disciplinaId}', [MaterialController::class, 'index'])->name('materiais.index');
+
+// Disciplina Routes
+Route::get('/disciplinas/{deptoId}', [DisciplinaController::class, 'index'])->name('disciplinas.index');
+
+// Department Routes
+Route::get('/deptos', [App\Http\Controllers\DeptoController::class, 'index'])->name('deptos.index');
 
 require __DIR__.'/auth.php';
