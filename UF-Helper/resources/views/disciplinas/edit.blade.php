@@ -1,7 +1,8 @@
 @extends('layouts.adminlte')
 
 @section('content')
-    <form action="{{ route('disciplinas.update', $disciplina) }}" method="PATCH">
+    <form action="{{ route('disciplinas.update', $disciplina) }}" method="POST">
+        @method('PATCH')
         @csrf
 
         <label for="nome">Nome da disciplina:</label>

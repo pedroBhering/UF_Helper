@@ -60,13 +60,13 @@ class DisciplinaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $departamento_id)
+    public function update(Request $request, $disciplina_id)
     {
-        $request->validated();
+        $request->validate([]);
         $data = $request->all();
-        $disciplina = Disciplinas::find($departamento_id);
+        $disciplina = Disciplinas::find($disciplina_id);
         $disciplina->update($data);
-        return redirect()->route('disciplinas.index')->with('success', true);
+        return redirect()->route('deptos.show',['depto'=>$disciplina->depto_id])->with('success', true);
     }
 
     /**

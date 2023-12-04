@@ -28,7 +28,7 @@
                     <td>{{ $depto->email }}</td>
                     <td>
                         {{-- <form action="{{ route('disciplinas.index') }}" method="GET"> --}}
-                            <a href="{{ route('disciplinas.index', $depto->id) }}" class="btn btn-dark mr-2"><i class="fas fa-eye"></i>
+                            <a href="{{ route('deptos.show', $depto->id) }}" class="btn btn-dark mr-2"><i class="fas fa-eye"></i>
                                 {{-- <input type="hidden" name="depto_id" value="{{ $depto->id }}"> --}}
                                 <button type="submit">Ver Disciplinas</button>
                             </a>

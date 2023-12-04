@@ -43,6 +43,8 @@ Route::patch('/disciplinas/{disciplinaId}', [DisciplinaController::class, 'updat
 
 // Department Routes
 Route::get('/deptos', [DeptoController::class, 'index'])->name('deptos.index');
+Route::get('/deptos/{depto}/show', [DeptoController::class, 'show'])->name('deptos.show');
+
 
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 

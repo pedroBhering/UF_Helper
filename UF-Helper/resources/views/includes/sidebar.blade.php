@@ -25,10 +25,10 @@
                 </li>
 
                 <li class="nav-item">
-                <form method="POST" action="{{ route('logout') }}">
-                  @csrf
-                  <button type="submit">Logout</button>
-                </form>
+                    <form method="GET" action="{{ route('deptos.index') }}">
+                      @csrf
+                      <button type="submit">Deptos</button>
+                    </form>
                 </li>
 
                 <li class="nav-item nav-dropdown">
@@ -38,6 +38,12 @@
                             <a class="nav-link" href="views/pages/login.html" target="_top"><i class="icon-star"></i>
                                 Login</a>
                         </li>
+                        <li class="nav-item">
+                            <form method="POST" action="{{ route('logout') }}">
+                              @csrf
+                              <button type="submit">Logout</button>
+                            </form>
+                            </li>
                         <li class="nav-item">
                             <a class="nav-link" href="views/pages/register.html" target="_top"><i
                                     class="icon-star"></i> Register</a>

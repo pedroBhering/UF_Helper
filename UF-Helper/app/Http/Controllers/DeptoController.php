@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Deptos;
+use App\Models\Disciplinas;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DeptoController extends Controller
 {
@@ -42,7 +44,9 @@ class DeptoController extends Controller
      */
     public function show(Deptos $depto)
     {
-        return view('deptos.show', compact('depto'));
+        $disciplinas = Disciplinas::where('depto_id', $depto->id)->get();
+        $user = Auth::user();
+        return view('deptos.show', compact('depto','disciplinas','user'));
     }
 
     /**
