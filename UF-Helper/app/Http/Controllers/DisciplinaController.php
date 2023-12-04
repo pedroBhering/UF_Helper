@@ -40,8 +40,9 @@ class DisciplinaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Disciplinas $disciplina)
+    public function show(int $disciplina_id)
     {
+        $disciplina = Disciplinas::find($disciplina_id);
         return view('disciplinas.show', compact('disciplina'));
     }
 

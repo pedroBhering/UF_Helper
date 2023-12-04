@@ -37,6 +37,7 @@ Route::get('/materiais/{disciplinaId}', [MaterialController::class, 'index'])->n
 
 // Disciplina Routes
 Route::get('/disciplinas/{deptoId}', [DisciplinaController::class, 'index'])->name('disciplinas.index');
+Route::get('/disciplinas/{disciplinaId}/show', [DisciplinaController::class, 'show'])->name('disciplinas.show');
 
 // Department Routes
 Route::get('/deptos', [DeptoController::class, 'index'])->name('deptos.index');
