@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Deptos;
 use App\Models\Disciplinas;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -15,7 +16,8 @@ class DisciplinaController extends Controller
     {
         $user = Auth::user();
         $disciplinas = Disciplinas::where('depto_id', $depto_id)->get();
-        return view('disciplinas.index', compact('disciplinas', 'user'));
+        $depto = Deptos::find($depto_id);
+        return view('disciplinas.index', compact('disciplinas', 'user', 'depto'));
     }
 
     /**
@@ -40,7 +42,7 @@ class DisciplinaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(int $disciplina_id)
+    public function show($disciplina_id)
     {
         $disciplina = Disciplinas::find($disciplina_id);
         return view('disciplinas.show', compact('disciplina'));
@@ -49,17 +51,20 @@ class DisciplinaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Disciplinas $disciplina)
+    public function edit($disciplina_id)
     {
+        $disciplina = Disciplinas::find($disciplina_id);
         return view('disciplinas.edit', compact('disciplina'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Disciplinas $disciplina)
+    public function update(Request $request, $departamento_id)
     {
-        $data = $request->validated();
+        $request->validated();
+        $data = $request->all();
+        $disciplina = Disciplinas::find($departamento_id);
         $disciplina->update($data);
         return redirect()->route('disciplinas.index')->with('success', true);
     }

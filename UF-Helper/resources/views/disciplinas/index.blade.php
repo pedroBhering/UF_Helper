@@ -1,7 +1,7 @@
 @extends('layouts.adminlte')
 
 @section('content')
-    <h1>Disciplinas</h1>
+    <h1>Disciplinas de {{ $depto->nome }}</h1>
 
     <ul>
         @foreach ($disciplinas as $disciplina)
@@ -12,9 +12,12 @@
                     <button type="submit">Ver Materiais</button>
                 </a>
             </li>
-            @can('create', $user)
-                <a href="{{ route('disciplinas.show', $disciplina->id) }}" class="btn btn-dark btn-edit"><i class="fas fa-eye"></i>
-                    <button type="submit">Ver Materiais</button></a>
+            <a href="{{ route('disciplinas.show', $disciplina->id) }}" class="btn btn-dark btn-edit"><i class="fas fa-eye"></i>
+                <button type="submit">Informacoes</button></a>
+            @can('update', $user)
+                <a href="{{ route('disciplinas.edit', $disciplina->id) }}" class="btn btn-dark btn-edit"><i
+                        class="fas fa-edit"></i>
+                    <button type="submit">Editar</button></a>
             @endcan
         @endforeach
     </ul>

@@ -38,6 +38,8 @@ Route::get('/materiais/{disciplinaId}', [MaterialController::class, 'index'])->n
 // Disciplina Routes
 Route::get('/disciplinas/{deptoId}', [DisciplinaController::class, 'index'])->name('disciplinas.index');
 Route::get('/disciplinas/{disciplinaId}/show', [DisciplinaController::class, 'show'])->name('disciplinas.show');
+Route::get('/disciplinas/{disciplinaId}/edit', [DisciplinaController::class, 'edit'])->name('disciplinas.edit');
+Route::patch('/disciplinas/{disciplinaId}', [DisciplinaController::class, 'update'])->name('disciplinas.update');
 
 // Department Routes
 Route::get('/deptos', [DeptoController::class, 'index'])->name('deptos.index');

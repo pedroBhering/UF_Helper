@@ -12,5 +12,5 @@
     <p><strong>Pre Requisitos:</strong> {{ $disciplina->pre_requisitos }}</p>
     {{-- <p><strong>Professores:</strong> {{ $disciplina->professores }}</p> --}}
     {{-- <p><strong>Monitor:</strong> {{ $disciplina->monitor }}</p> --}}
-    {{-- <p><strong>Monitor:</strong> {{ $disciplina->depto() }}</p> --}}
+    {{-- <p><strong>Departamento:</strong> {{ $disciplina->depto_id }}</p> --}}
 @endsection
