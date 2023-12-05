@@ -1,7 +1,7 @@
 <div class="app-body">
-    <div class="sidebar">
+    <div class="sidebar d-flex py-2" style="background: linear-gradient(to right, rgb(93, 0, 0), rgb(193, 0, 0));">
         <nav class="sidebar-nav">
-            <ul class="nav">
+            <ul class="nav d-flex">
                 <li class="nav-item">
                     <a href="{{ route('deptos.index') }}" class="btn btn-dark mr-2 mt-2"><i class="fas fa-home"></i>
                         <button type="submit">Home</button>
