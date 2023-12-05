@@ -20,7 +20,7 @@ class UserFactory extends Factory
      */
     public function definition(): array
     {
-        return [
+        $user = [
             'nome' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
@@ -31,6 +31,12 @@ class UserFactory extends Factory
             'cpf' => fake()->unique()->numberBetween(10000000000, 99999999999),
             'tipo' => fake()->numberBetween(0,2),
         ];
+        
+        // if ($user['tipo'] != 0) {
+        //     $user['depto_id'] = fake()->numberBetween(1, 6);
+        // }
+
+        return $user;
     }
 
     /**

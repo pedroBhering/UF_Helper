@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
-            // $table->unsignedBigInteger('disciplina_id')->nullable(true);
-            // $table->foreign('disciplina_id')->references('id')->on('deptos')->onDelete('cascade');
-
+            // $table->unsignedBigInteger('depto_id');
+            // $table->foreign('depto_id')->references('id')->on('deptos')->onDelete('cascade');
+            //criar a chve estrangeira
             $table->id();
             $table->string('nome', 100)->nullable(false);
             $table->string('email', 100)->nullable(false)->unique();

@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Disciplinas;
+use App\Models\Deptos;
 
 class MaterialController extends Controller
 {
@@ -69,9 +70,9 @@ class MaterialController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show($materialId)
+    public function show($material_id)
     {
-        $material = Materiais::find($materialId);
+        $material = Materiais::find($material_id);
         $autor = User::find($material->autor_id);
         return view('materiais.show', compact('material', 'autor'));
     }
@@ -82,7 +83,10 @@ class MaterialController extends Controller
     public function edit($material_id)
     {
         $material = Materiais::find($material_id);
-        return view('materiais.edit', compact('material'));
+        $disciplina = Disciplinas::find($material->disciplina_id);
+        $autores = User::where('tipo', 1)->get();
+        // $autores = $autores::where('depto_id', $disciplina->depto_id)->get();
+        return view('materiais.edit', compact('material','autores'));
     }
 
     /**
@@ -94,9 +98,9 @@ class MaterialController extends Controller
         $data = $request->all();
         $material = Materiais::find($material_id);
         $material->update($data);
-        return redirect()->route('materiais.show',['materialId'=>$material_id])->with('success', true);
+        return redirect()->route('disciplinas.show',['disciplina_id'=>$material->disciplina_id])->with('success', true);
         // return redirect()->route('disciplinas.show',['disciplina_id'=>$material->disciplina_id])->with('success', true);
-    }
+    }//arrumar essa rota para sair do show e ia pra a disciplina.materiais
 
     /**
      * Remove the specified resource from storage.

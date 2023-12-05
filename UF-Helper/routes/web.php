@@ -33,16 +33,17 @@ Route::middleware('auth')->group(function () {
 
 // Material Routes
 // Route::get('/materiais', [MaterialController::class, 'index'])->name('materiais.index');
-Route::get('/materiais/{disciplinaId}', [MaterialController::class, 'index'])->name('materiais.index');
-Route::get('/materiais/{materialId}/show', [MaterialController::class, 'show'])->name('materiais.show');
-Route::get('/materiais/{materialId}/edit', [MaterialController::class, 'edit'])->name('materiais.edit');
-Route::patch('/materiais/{materialId}', [MaterialController::class, 'update'])->name('materiais.update');
+Route::get('/materiais/{disciplina_id}', [MaterialController::class, 'index'])->name('materiais.index');
+Route::get('/materiais/{material_id}/show', [MaterialController::class, 'show'])->name('materiais.show');
+Route::get('/materiais/{material_id}/edit', [MaterialController::class, 'edit'])->name('materiais.edit');
+Route::patch('/materiais/{material_id}', [MaterialController::class, 'update'])->name('materiais.update');
 
 // Disciplina Routes
 Route::get('/disciplinas', [DisciplinaController::class, 'index'])->name('disciplinas.index');
-Route::get('/disciplinas/{disciplinaId}/show', [DisciplinaController::class, 'show'])->name('disciplinas.show');
-Route::get('/disciplinas/{disciplinaId}/edit', [DisciplinaController::class, 'edit'])->name('disciplinas.edit');
-Route::patch('/disciplinas/{disciplinaId}', [DisciplinaController::class, 'update'])->name('disciplinas.update');
+Route::get('/disciplinas/{disciplina_id}/show', [DisciplinaController::class, 'show'])->name('disciplinas.show');
+Route::get('/disciplinas/{disciplina_id}/edit', [DisciplinaController::class, 'edit'])->name('disciplinas.edit');
+Route::patch('/disciplinas/{disciplina_id}', [DisciplinaController::class, 'update'])->name('disciplinas.update');
+Route::patch('/disciplinas/{disciplina_id}/materiais', [DisciplinaController::class, 'materiais'])->name('disciplinas.materiais');
 
 // Department Routes
 Route::get('/deptos', [DeptoController::class, 'index'])->name('deptos.index');

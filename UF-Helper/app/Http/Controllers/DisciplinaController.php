@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Deptos;
 use App\Models\Disciplinas;
+use App\Models\Materiais;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -76,5 +77,12 @@ class DisciplinaController extends Controller
     {
         $disciplina->delete();
         return redirect()->route('disciplinas.index')->with('success', true);
+    }
+
+    public function materiais($disciplina_id)
+    {
+        $materiais = Materiais::where('disciplina_id', $disciplina_id)->get();
+        $disciplina = Disciplinas::find($disciplina_id);
+        return view('disciplinas.materiais', compact('disciplina','materiais'));
     }
 }

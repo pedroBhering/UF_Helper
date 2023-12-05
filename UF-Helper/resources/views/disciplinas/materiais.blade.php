@@ -23,4 +23,3 @@
         @endforeach
     </ul>
 @endsection
-{{--arrumar essa parte para encaixar com o resto --}}
