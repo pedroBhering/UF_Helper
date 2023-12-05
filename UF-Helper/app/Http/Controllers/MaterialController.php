@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Materiais;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Disciplinas;
+use App\Models\User;
 
 class MaterialController extends Controller
 {
@@ -12,8 +15,10 @@ class MaterialController extends Controller
      */
     public function index($disciplina_id)
     {
+        $user = Auth::user();
         $materiais = Materiais::where('disciplina_id', $disciplina_id)->get();
-        return view('materiais.index',compact('materiais'));
+        $disciplina = Disciplinas::find($disciplina_id);
+        return view('materiais.index', compact('materiais', 'user', 'disciplina'));
     }
 
     /**
@@ -64,27 +69,33 @@ class MaterialController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Materiais $materiai)
+    public function show($material_id)
     {
-        return view('materiais.show', compact('materiai'));
+        $material = Materiais::find($material_id);
+        $autor = User::find($material->autor_id);
+        return view('materiais.show', compact('material', 'autor'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Materiais $materiais)
+    public function edit($material_id)
     {
-        return view('materiais.edit', compact('materiais'));
+        $material = Materiais::find($material_id);
+        return view('materiais.edit', compact('material'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Materiais $materiais)
+    public function update(Request $request, $material_id)
     {
-        $data = $request->validated();
-        $materiais->update($data);
-        return redirect()->route('materiais.index')->with('success', true);
+        $request->validate([]);
+        $data = $request->all();
+        $material = Materiais::find($material_id);
+        $material->update($data);
+        return redirect()->route('materiais.show',['materialId'=>$material_id])->with('success', true);
+        // return redirect()->route('disciplinas.show',['disciplina_id'=>$material->disciplina_id])->with('success', true);
     }
 
     /**

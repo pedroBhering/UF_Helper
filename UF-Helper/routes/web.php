@@ -17,8 +17,8 @@ use App\Http\Controllers\DeptoController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::middleware('auth')->group(function () {
+    Route::get('/', [DeptoController::class, 'index'])->name('deptos.index');
 });
 
 Route::get('/dashboard', function () {
@@ -34,6 +34,9 @@ Route::middleware('auth')->group(function () {
 // Material Routes
 // Route::get('/materiais', [MaterialController::class, 'index'])->name('materiais.index');
 Route::get('/materiais/{disciplinaId}', [MaterialController::class, 'index'])->name('materiais.index');
+Route::get('/materiais/{materialId}/show', [MaterialController::class, 'show'])->name('materiais.show');
+Route::get('/materiais/{materialId}/edit', [MaterialController::class, 'edit'])->name('materiais.edit');
+Route::patch('/materiais/{materialId}', [MaterialController::class, 'update'])->name('materiais.update');
 
 // Disciplina Routes
 Route::get('/disciplinas/{deptoId}', [DisciplinaController::class, 'index'])->name('disciplinas.index');
