@@ -98,7 +98,7 @@ class MaterialController extends Controller
         $data = $request->all();
         $material = Materiais::find($material_id);
         $material->update($data);
-        return redirect()->route('disciplinas.show',['disciplina_id'=>$material->disciplina_id])->with('success', true);
+        return redirect()->route('materiais.index',['disciplina_id'=>$material->disciplina_id])->with('success', true);
         // return redirect()->route('disciplinas.show',['disciplina_id'=>$material->disciplina_id])->with('success', true);
     }//arrumar essa rota para sair do show e ia pra a disciplina.materiais
 
