@@ -17,7 +17,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <!-- Scripts -->
   @vite(['resources/css/app.css', 'resources/js/app.js'])
-  <link rel="stylesheet" href="{{ asset('/css/layouts/styles.css') }}">
+  {{-- <link rel="stylesheet" href="{{ asset('/css/layouts/styles.css') }}"> --}}
 
   {{-- Bootstrap --}}
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
@@ -49,7 +49,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   @include('includes.navbar')
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+  <div class="content-wrapper" style="margin-left: 0%">
     <!-- Content Header (Page header) -->
     <div class="content-header">
       @yield('header')
