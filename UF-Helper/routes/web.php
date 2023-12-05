@@ -35,19 +35,28 @@ Route::middleware('auth')->group(function () {
 // Route::get('/materiais', [MaterialController::class, 'index'])->name('materiais.index');
 Route::get('/materiais/{disciplina_id}', [MaterialController::class, 'index'])->name('materiais.index');
 Route::get('/materiais/{material_id}/show', [MaterialController::class, 'show'])->name('materiais.show');
+
+Route::get('/materiais/{disciplina_id}/create', [MaterialController::class, 'create'])->name('materiais.create');
+Route::post('/materiais/{disciplina_id}', [MaterialController::class, 'store'])->name('materiais.store');
+
 Route::get('/materiais/{material_id}/edit', [MaterialController::class, 'edit'])->name('materiais.edit');
 Route::patch('/materiais/{material_id}', [MaterialController::class, 'update'])->name('materiais.update');
+Route::delete('/materiais/{material_id}', [MaterialController::class, 'destroy'])->name('materiais.destroy');
 
 // Disciplina Routes
 Route::get('/disciplinas', [DisciplinaController::class, 'index'])->name('disciplinas.index');
 Route::get('/disciplinas/{disciplina_id}/show', [DisciplinaController::class, 'show'])->name('disciplinas.show');
+Route::get('/disciplinas/{depto_id}/create', [DisciplinaController::class, 'create'])->name('disciplinas.create');
+Route::post('/disciplinas/{depto_id}', [DisciplinaController::class, 'store'])->name('disciplinas.store');
 Route::get('/disciplinas/{disciplina_id}/edit', [DisciplinaController::class, 'edit'])->name('disciplinas.edit');
 Route::patch('/disciplinas/{disciplina_id}', [DisciplinaController::class, 'update'])->name('disciplinas.update');
-Route::patch('/disciplinas/{disciplina_id}/materiais', [DisciplinaController::class, 'materiais'])->name('disciplinas.materiais');
+Route::delete('/disciplinas/{disciplina_id}', [DisciplinaController::class, 'destroy'])->name('disciplinas.destroy');
+
+Route::get('/disciplinas/{disciplina_id}/materiais', [DisciplinaController::class, 'materiais'])->name('disciplinas.materiais');
 
 // Department Routes
 Route::get('/deptos', [DeptoController::class, 'index'])->name('deptos.index');
-Route::get('/deptos/{depto}/show', [DeptoController::class, 'show'])->name('deptos.show');
+Route::get('/deptos/{depto_id}/show', [DeptoController::class, 'show'])->name('deptos.show');
 
 
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');

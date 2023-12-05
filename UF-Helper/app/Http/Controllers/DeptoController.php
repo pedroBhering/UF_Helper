@@ -42,8 +42,9 @@ class DeptoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Deptos $depto)
+    public function show($depto_id)
     {
+        $depto = Deptos::find($depto_id);
         $disciplinas = Disciplinas::where('depto_id', $depto->id)->get();
         $user = Auth::user();
         return view('deptos.show', compact('depto','disciplinas','user'));

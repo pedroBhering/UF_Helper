@@ -25,10 +25,11 @@ class MaterialController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create($disciplina_id)
     {
+        $autores = User::where('tipo', 1)->get();
         $material = new Materiais();
-        return view('materiais.create', compact('material'));
+        return view('materiais.create', compact('material', 'autores','disciplina_id'));
     }
 
     /**
@@ -36,35 +37,10 @@ class MaterialController extends Controller
      */
     public function store(Request $request)
     {
-        $material = new Materiais();
-        $material->fill($request->all());
-
-        // Valida se o autor é um professor
-        $material->validate();
-
-        if ($material->errors()->has('autor_id')) {
-            return response()->json($material->errors(), 422);
-        }
-
-        if ($request->hasFile('pdf')) {
-            $pdf = $request->file('pdf');
-            $fileName = $pdf->getClientOriginalName();
-            $path = $pdf->storeAs('public/materiais', $fileName);
-    
-            $material->link = asset($path);
-        }
-
-        if ($request->hasFile('video')) {
-            $video = $request->file('video');
-            $fileName = $video->getClientOriginalName();
-            $path = $video->storeAs('public/videos', $fileName);
-        
-            $material->link = asset($path);
-        }
-
-        $material->save();
-
-        return redirect()->route('materiais.index')->with('success', true);
+        $request->validate([]);
+        $data = $request->all();
+        $material = Materiais::create($data);
+        return redirect()->route('disciplinas.materiais',['disciplina_id'=>$material->disciplina_id])->with('success', true);
     }
 
     /**
@@ -98,17 +74,19 @@ class MaterialController extends Controller
         $data = $request->all();
         $material = Materiais::find($material_id);
         $material->update($data);
-        return redirect()->route('materiais.index',['disciplina_id'=>$material->disciplina_id])->with('success', true);
+        return redirect()->route('disciplinas.materiais',['disciplina_id'=>$material->disciplina_id])->with('success', true);
         // return redirect()->route('disciplinas.show',['disciplina_id'=>$material->disciplina_id])->with('success', true);
     }//arrumar essa rota para sair do show e ia pra a disciplina.materiais
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Materiais $materiais)
+    public function destroy($material_id)
     {
-        $materiais->delete();
-        return redirect()->route('materiais.index')->with('success', true);
+        $material = Materiais::find($material_id);
+        $disciplina_id = $material->disciplina_id;
+        $material->delete();
+        return redirect()->route('disciplinas.materiais',['disciplina_id'=>$disciplina_id])->with('success', true);
     }
 
     public function materiaisPorDisciplina($disciplina_id)

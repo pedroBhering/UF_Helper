@@ -18,6 +18,11 @@
         </div>
 
         <div class="mt-2">
+            <label for="tipo">Tipo do material:</label>
+            <input type="text" name="tipo" id="tipo" value="{{ $material->tipo }}" required>
+        </div>
+
+        <div class="mt-2">
             <label for="link">Link do material:</label>
             <input type="text" name="link" id="link" value="{{ $material->link }}" required>
         </div>

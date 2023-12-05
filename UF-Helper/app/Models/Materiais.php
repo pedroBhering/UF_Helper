@@ -15,6 +15,7 @@ class Materiais extends Model
         'tipo',
         'link',
         'autor_id',
+        'disciplina_id',
     ];
 
     public static $rules = [

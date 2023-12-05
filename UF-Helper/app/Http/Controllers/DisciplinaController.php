@@ -24,10 +24,10 @@ class DisciplinaController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create($depto_id)
     {
         $disciplina = new Disciplinas();
-        return view('disciplinas.create', compact('disciplina'));
+        return view('disciplinas.create', compact('disciplina', 'depto_id'));
     }
 
     /**
@@ -35,9 +35,10 @@ class DisciplinaController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->validated();
-        Disciplinas::create($data);
-        return redirect()->route('disciplinas.index')->with('success', true);
+        $request->validate([]);
+        $data = $request->all();
+        $disciplina = Disciplinas::create($data);
+        return redirect()->route('deptos.show',['depto_id' => $disciplina->depto_id])->with('success', true);
     }
 
     /**
@@ -73,16 +74,20 @@ class DisciplinaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Disciplinas $disciplina)
+    public function destroy($disciplina_id)
     {
+        $disciplina = Disciplinas::find($disciplina_id);
+        $depto_id = $disciplina->depto_id;
         $disciplina->delete();
-        return redirect()->route('disciplinas.index')->with('success', true);
+        return redirect()->route('deptos.show',['depto_id'=>$depto_id])->with('success', true);
+
     }
 
     public function materiais($disciplina_id)
     {
         $materiais = Materiais::where('disciplina_id', $disciplina_id)->get();
         $disciplina = Disciplinas::find($disciplina_id);
-        return view('disciplinas.materiais', compact('disciplina','materiais'));
+        $user = Auth::user();
+        return view('disciplinas.materiais', compact('disciplina','materiais','user'));
     }
 }

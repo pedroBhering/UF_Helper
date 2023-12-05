@@ -19,6 +19,7 @@ class Disciplinas extends Model
         'pre_requisitos',
         'professores',
         'monitor',
+        'depto_id',
     ];
 
     public function depto()
