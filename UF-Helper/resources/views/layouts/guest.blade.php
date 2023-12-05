@@ -17,7 +17,7 @@
     <body class="font-sans text-gray-900 antialiased">
         <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100 dark:bg-gray-900" style="background: linear-gradient(to right, rgb(55, 0, 0), rgb(193, 0, 0));">
             <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white dark:bg-gray-800 shadow-md overflow-hidden sm:rounded-lg" style="background-color:   rgb(90, 90, 90); box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" >
-                <div class="flex justify-center">
+                <div class="flex justify-center" style="padding-bottom: 2rem">
                     <a href="/">
                         <img src="/img/logo.png" class="object-contain" />
                     </a>
