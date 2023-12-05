@@ -9,7 +9,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
-  <title>{{ config('app.name', 'Laravel') }}</title>
+  <title>{{ config('app.name', 'UF-Helper') }}</title>
 
 
   <!-- Fonts -->
@@ -46,7 +46,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
-  @include('includes.sidebar')
+  @include('includes.navbar')
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -65,12 +65,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- /.content-wrapper -->
 
   <!-- Main Footer -->
-  <footer class="main-footer">
-    <!-- To the right -->
-    <div class="float-right d-none d-sm-inline">
-
-    </div>
-  </footer>
+  @include('includes.footer')
 </div>
 <!-- ./wrapper -->
 

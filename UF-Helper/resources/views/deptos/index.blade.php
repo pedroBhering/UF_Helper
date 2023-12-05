@@ -1,9 +1,6 @@
 @extends('layouts.adminlte')
 
-@section('header')
-    <h1>Aqui é o header</h1>
-    <p>Pode colocar tags com o estilo que quiser</p>
-@endsection
+@section('title', 'UF-Helper | Departamentos')
 
 @section('content')
 <div class="py-12">

@@ -39,7 +39,7 @@ Route::get('/materiais/{materialId}/edit', [MaterialController::class, 'edit'])-
 Route::patch('/materiais/{materialId}', [MaterialController::class, 'update'])->name('materiais.update');
 
 // Disciplina Routes
-Route::get('/disciplinas/{deptoId}', [DisciplinaController::class, 'index'])->name('disciplinas.index');
+Route::get('/disciplinas', [DisciplinaController::class, 'index'])->name('disciplinas.index');
 Route::get('/disciplinas/{disciplinaId}/show', [DisciplinaController::class, 'show'])->name('disciplinas.show');
 Route::get('/disciplinas/{disciplinaId}/edit', [DisciplinaController::class, 'edit'])->name('disciplinas.edit');
 Route::patch('/disciplinas/{disciplinaId}', [DisciplinaController::class, 'update'])->name('disciplinas.update');

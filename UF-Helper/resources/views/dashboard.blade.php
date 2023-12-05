@@ -1,9 +1,10 @@
 @extends('layouts.adminlte')
 
-@section('header')
+{{-- @section('header')
     <h1>Aqui é o header</h1>
     <p>Pode colocar tags com o estilo que quiser</p>
-@endsection
+@endsection --}}
+@section('title', 'UF-Helper | Dashboard')
 
 @section('content')
 <div class="py-12">

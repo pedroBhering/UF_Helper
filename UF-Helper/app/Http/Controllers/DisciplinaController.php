@@ -12,12 +12,12 @@ class DisciplinaController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index($depto_id)
+    public function index()
     {
         $user = Auth::user();
-        $disciplinas = Disciplinas::where('depto_id', $depto_id)->get();
-        $depto = Deptos::find($depto_id);
-        return view('disciplinas.index', compact('disciplinas', 'user', 'depto'));
+        $disciplinas = Disciplinas::all();
+        $deptos = Deptos::all();
+        return view('disciplinas.index', compact('disciplinas', 'user', 'deptos'));
     }
 
     /**

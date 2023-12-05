@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Materiais;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Disciplinas;
-use App\Models\User;
 
 class MaterialController extends Controller
 {
@@ -69,9 +69,9 @@ class MaterialController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show($material_id)
+    public function show($materialId)
     {
-        $material = Materiais::find($material_id);
+        $material = Materiais::find($materialId);
         $autor = User::find($material->autor_id);
         return view('materiais.show', compact('material', 'autor'));
     }
