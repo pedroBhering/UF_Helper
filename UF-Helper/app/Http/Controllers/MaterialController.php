@@ -19,7 +19,7 @@ class MaterialController extends Controller
         $user = Auth::user();
         $materiais = Materiais::where('disciplina_id', $disciplina_id)->get();
         $disciplina = Disciplinas::find($disciplina_id);
-        return view('materiais.index', compact('materiais', 'user', 'disciplina'));
+        return view('disciplinas.materiais', compact('materiais', 'user', 'disciplina'));
     }
 
     /**
