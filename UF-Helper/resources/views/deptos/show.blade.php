@@ -10,11 +10,13 @@
             <h1>Disciplinas de {{ $depto->nome }}</h1>
 
             <ul>
-                <a href="{{ route('disciplinas.create', $depto->id) }}" class="btn btn-dark mr-2 btn-add"><i
-                        class="fas fa-plus"></i>
-                    {{-- <input type="hidden" name="depto_id" value="{{ $depto->id }}"> --}}
-                    <button style="color: white" type="submit">Adicionar Disciplina</button>
-                </a>
+                @can('add',$user)
+                    <a href="{{ route('disciplinas.create', $depto->id) }}" class="btn btn-dark mr-2 btn-add"><i
+                            class="fas fa-plus"></i>
+                        {{-- <input type="hidden" name="depto_id" value="{{ $depto->id }}"> --}}
+                        <button style="color: white" type="submit">Adicionar Disciplina</button>
+                    </a>
+                @endcan    
                 @foreach ($disciplinas as $disciplina)
                     <div class="mt-3"
                         style="border: 1px solid #000; border-radius: 10px; border: none; padding: 0.5rem; box-shadow: 0 0 10px rgba(0,0,0,0.25);">

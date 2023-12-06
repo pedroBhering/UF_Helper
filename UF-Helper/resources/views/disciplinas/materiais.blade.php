@@ -9,10 +9,12 @@
 
             <h1>Materiais de {{ $disciplina->nome }}</h1>
             <ul>
-                <a href="{{ route('materiais.create', $disciplina->id) }}" class="btn btn-dark mr-2 btn-add"><i
-                        class="fas fa-plus"></i>
-                    <button type="submit">Adicionar Material</button>
-                </a>
+                @can('add',$user)
+                    <a href="{{ route('materiais.create', $disciplina->id) }}" class="btn btn-dark mr-2 btn-add"><i
+                            class="fas fa-plus"></i>
+                        <button type="submit">Adicionar Material</button>
+                    </a>
+                @endcan    
                 @foreach ($materiais as $material)
                     <div class="mt-2">
                         <h5>{{ $material->nome }}</h5>

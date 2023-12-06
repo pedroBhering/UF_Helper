@@ -8,17 +8,13 @@
                 @foreach ($disciplinas as $disciplina)
                     <div class="mt-3"
                         style="border: 1px solid #000; border-radius: 10px; border: none; padding: 0.5rem; box-shadow: 0 0 10px rgba(0,0,0,0.25);">
-                        <h5><a href="{{ route('deptos.show', $disciplina->depto_id) }}" style="color: black">{{ $disciplina->nome }}</a></h5>
+                        <h5><a href="{{ route('disciplinas.show', $disciplina->id) }}" style="color: black">{{ $disciplina->nome }}</a></h5>
                         <div class="flex flex-wrap items-center">
                             <!-- Seus botões aqui -->
                             <a href="{{ route('materiais.index', $disciplina->id) }}"
                                 class="btn btn-dark mr-2 btn-view flex-grow"><i class="fas fa-book"></i>
                                 {{-- <input type="hidden" name="depto_id" value="{{ $depto->id }}"> --}}
                                 <button type="submit">Ver Materiais</button>
-                            </a>
-                            <a href="{{ route('disciplinas.show', $disciplina->id) }}" class="btn btn-dark mr-2 flex-grow"><i
-                                    class="fas fa-eye"></i>
-                                <button type="submit">Informações</button>
                             </a>
                         </div>
                     </div>

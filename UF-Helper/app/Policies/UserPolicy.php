@@ -23,6 +23,11 @@ class UserPolicy
         //
     }
 
+    public function add(User $user, User $model): bool
+    {
+        return User::PROFESSOR == $user->tipo;
+    }
+
     /**
      * Determine whether the user can create models.
      */
@@ -68,6 +73,11 @@ class UserPolicy
     */
 
     public function comment(User $user, User $model): bool
+    {
+        return User::MONITOR == $user->tipo || User::PROFESSOR == $user->tipo;
+    }
+
+    public function deleteComment(User $user, User $model): bool
     {
         return User::MONITOR == $user->tipo || User::PROFESSOR == $user->tipo;
     }

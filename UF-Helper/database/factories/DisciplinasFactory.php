@@ -19,8 +19,8 @@ class DisciplinasFactory extends Factory
         return [
             'nome' => $this->faker->sentence(),
             'codigo' => $this->faker->unique()->numberBetween(1, 10000), //XXX.XXX - 3 letras e 3 numeros
-            'ementa' => $this->faker->paragraph(),
-            'bibliografia' => $this->faker->paragraph(),
+            'ementa' => $this->faker->sentence(),
+            'bibliografia' => $this->faker->sentence(),
             'carga_horaria' => $this->faker->numberBetween(1, 10),
             'creditos' => $this->faker->numberBetween(1, 10),
             'pre_requisitos' => $this->faker->sentence(),

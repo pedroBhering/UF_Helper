@@ -33,7 +33,7 @@
                     <p><strong>Titulo:</strong> {{ $comentario->titulo }}</p>
                     <p><strong>Comentario:</strong> {{ $comentario->conteudo }}</p>
                     <p>Autor: {{ $comentario->autor }}</p>
-                    @can('delete', $user)
+                    @can('deleteComment', $user)
                         <form action="{{ route('comments.destroy', $comentario->id) }}" method="POST">
                             @csrf
                             @method('DELETE')

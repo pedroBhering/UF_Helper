@@ -14,13 +14,33 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         User::create([
-            'nome' => 'root',
-            'email'=> 'root@root.root', 
+            'nome' => 'professor',
+            'email'=> 'professor@professor.professor', 
             'password' => 123456789,
             'matricula' => 200000000,
             'curso' => 'A',
             'cpf' => 12345678901,
             'tipo' => 1,
+        ]);
+
+        User::create([
+            'nome' => 'monitor',
+            'email'=> 'monitor@monitor.monitor', 
+            'password' => 123456789,
+            'matricula' => 211111110,
+            'curso' => 'X',
+            'cpf' => 12345678801,
+            'tipo' => 2,
+        ]);
+
+        User::create([
+            'nome' => 'aluno',
+            'email'=> 'aluno@aluno.aluno', 
+            'password' => 123456789,
+            'matricula' => 222222220,
+            'curso' => 'Z',
+            'cpf' => 12355678801,
+            'tipo' => 0,
         ]);
 
         User::factory()->count(20)->create();
