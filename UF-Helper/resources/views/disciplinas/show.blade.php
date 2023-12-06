@@ -3,18 +3,60 @@
 @section('content')
     <div class="max-w-7xl mx-auto">
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-3">
-
+            <a href="{{ route('deptos.show', $disciplina->depto_id) }}" class=" ml-2 btn btn-dark mr-2">
+                <button style="color: white" type="submit">Cancelar</button>
+            </a> 
             <h1>Informacoes da Disciplina</h1>
-            <p><strong>Nome:</strong> {{ $disciplina->nome }}</p>
-            <p><strong>Codigo:</strong> {{ $disciplina->codigo }}</p>
-            <p><strong>Ementa:</strong> {{ $disciplina->ementa }}</p>
-            <p><strong>Bibliografia:</strong> {{ $disciplina->bibliografia }}</p>
-            <p><strong>Carga Horaria:</strong> {{ $disciplina->carga_horaria }}</p>
-            <p><strong>Creditos:</strong> {{ $disciplina->creditos }}</p>
-            <p><strong>Pre Requisitos:</strong> {{ $disciplina->pre_requisitos }}</p>
-            {{-- <p><strong>Professores:</strong> {{ $disciplina->professores }}</p> --}}
-            {{-- <p><strong>Monitor:</strong> {{ $disciplina->monitor }}</p> --}}
-            {{-- <p><strong>Departamento:</strong> {{ $disciplina->depto_id }}</p> --}}
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Nome:</strong></td>
+                        <td>{{ $disciplina->nome }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Codigo:</strong></td>
+                        <td>{{ $disciplina->codigo }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ementa:</strong></td>
+                        <td>{{ $disciplina->ementa }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Bibliografia:</strong></td>
+                        <td>{{ $disciplina->bibliografia }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Carga Horaria:</strong></td>
+                        <td>{{ $disciplina->carga_horaria }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Creditos:</strong></td>
+                        <td>{{ $disciplina->creditos }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Requisitos:</strong></td>
+                        <td>{{ $disciplina->pre_requisitos }}</td>
+                    </tr>
+                    {{-- <tr>
+                        <td><strong>Professores:</strong></td>
+                        <td>{{ $disciplina->professores }}</td>
+                    </tr> --}}
+                    {{-- <tr>
+                        <td><strong>Monitor:</strong></td>
+                        <td>{{ $disciplina->monitor }}</td>
+                    </tr> --}}
+                    {{-- <tr>
+                        <td><strong>Departamento:</strong></td>
+                        <td>{{ $disciplina->depto_id }}</td>
+                    </tr> --}}
+                </tbody>
+            </table>
         </div>
     </div>
 @endsection

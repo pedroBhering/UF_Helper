@@ -3,9 +3,11 @@
 @section('content')
     <div class="max-w-7xl mx-auto">
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-3">
-            <h1>Materiais de {{ $disciplina->nome }}</h1>
+            <a href="{{ route('deptos.show', $disciplina->depto_id) }}" class="btn btn-dark mr-2"><i style="color:white" class="fas fa-arrow-left"></i>
+                <button style="color: white" type="submit">Voltar</button>
+            </a>
 
-            
+            <h1>Materiais de {{ $disciplina->nome }}</h1>
             <ul>
                 <a href="{{ route('materiais.create', $disciplina->id) }}" class="btn btn-dark mr-2 btn-add"><i
                         class="fas fa-plus"></i>

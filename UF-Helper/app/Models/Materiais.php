@@ -45,6 +45,11 @@ class Materiais extends Model
         return $this->belongsTo(Disciplinas::class,'id');
     }
 
+    public function comentario()
+    {
+        return $this->hasMany(Comments::class,'id');
+    }
+
     public function autor()
     {
         return $this->belongsTo(User::class, 'autor_id');

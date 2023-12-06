@@ -33,6 +33,9 @@
                     </div>
 
                     <div style="display: flex; justify-content: center;">
+                        <a href="{{ route('disciplinas.materiais', $material->disciplina_id) }}" class=" ml-2 btn btn-dark mr-2">
+                            <button style="color: white" type="submit">Cancelar</button>
+                        </a>    
                         <button class="btn px-4" style="background-color: rgb(93, 0, 0); color: white;"
                             type="submit">Salvar</button>
                     </div>

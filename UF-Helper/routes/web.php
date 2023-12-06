@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MaterialController;
 use App\Http\Controllers\DisciplinaController;
 use App\Http\Controllers\DeptoController;
+use App\Http\Controllers\CommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,7 +39,6 @@ Route::get('/materiais/{material_id}/show', [MaterialController::class, 'show'])
 
 Route::get('/materiais/{disciplina_id}/create', [MaterialController::class, 'create'])->name('materiais.create');
 Route::post('/materiais/{disciplina_id}', [MaterialController::class, 'store'])->name('materiais.store');
-
 Route::get('/materiais/{material_id}/edit', [MaterialController::class, 'edit'])->name('materiais.edit');
 Route::patch('/materiais/{material_id}', [MaterialController::class, 'update'])->name('materiais.update');
 Route::delete('/materiais/{material_id}', [MaterialController::class, 'destroy'])->name('materiais.destroy');
@@ -58,6 +58,9 @@ Route::get('/disciplinas/{disciplina_id}/materiais', [DisciplinaController::clas
 Route::get('/deptos', [DeptoController::class, 'index'])->name('deptos.index');
 Route::get('/deptos/{depto_id}/show', [DeptoController::class, 'show'])->name('deptos.show');
 
+Route::get('/comments/{material_id}/create', [CommentController::class, 'create'])->name('comments.create');
+Route::post('/comments/store/{material_id}', [CommentController::class, 'store'])->name('comments.store');
+Route::delete('/comments/{comment}', [CommentController::class, 'destroy'])->name('comments.destroy');
 
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 

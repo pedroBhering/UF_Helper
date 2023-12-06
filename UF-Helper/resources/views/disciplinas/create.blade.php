@@ -45,6 +45,9 @@
                     </div>
 
                     <div style="display: flex; justify-content: center;">
+                        <a href="{{ route('deptos.show', $depto_id) }}" class=" ml-2 btn btn-dark mr-2">
+                            Cancelar
+                        </a> 
                         <button class="btn px-4" style="background-color: rgb(93, 0, 0); color: white;"
                             type="submit">Salvar</button>
                     </div>

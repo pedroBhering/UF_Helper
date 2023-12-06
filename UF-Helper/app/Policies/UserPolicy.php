@@ -62,4 +62,14 @@ class UserPolicy
     {
         //
     }
+
+    /**
+    * Determine whether the user can comment a subject.
+    */
+
+    public function comment(User $user, User $model): bool
+    {
+        return User::MONITOR == $user->tipo || User::PROFESSOR == $user->tipo;
+    }
+
 }

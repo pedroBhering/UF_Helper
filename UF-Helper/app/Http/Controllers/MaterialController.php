@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comments;
 use App\Models\Materiais;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -50,7 +51,9 @@ class MaterialController extends Controller
     {
         $material = Materiais::find($material_id);
         $autor = User::find($material->autor_id);
-        return view('materiais.show', compact('material', 'autor'));
+        $comentarios = Comments::where('material_id', $material_id)->get();
+        $user = Auth::user();
+        return view('materiais.show', compact('material', 'autor','comentarios','user'));
     }
 
     /**
