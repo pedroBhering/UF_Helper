@@ -12,7 +12,7 @@
                     <form method="GET" action="{{ route('deptos.index') }}">
                         @csrf
                         <button class="btn btn-dark mr-2" type="submit"><i class="fas fa-search"></i> Busca</button>
-                        <input class="mr-2 mt-1" type="text" name="nome" id="nome" value="" required>
+                        <input class="mr-2 mt-1" type="text" name="nome" id="nome" value="" required style="border-radius: 10px;">
                     </form>
                 </li>
 

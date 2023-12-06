@@ -19,7 +19,7 @@
                                 <label for="nome">Nome da disciplina:</label>
                             </td>
                             <td>
-                                <input type="text" name="nome" id="nome" value="{{ $disciplina->nome }}" required>
+                                <input class="mb-2"  type="text" name="nome" id="nome" value="{{ $disciplina->nome }}" required style="border-radius: 10px;">
                             </td>
                         </tr>
                         <tr>
@@ -27,7 +27,7 @@
                                 <label for="codigo">Código da disciplina:</label>
                             </td>
                             <td>
-                                <input type="text" name="codigo" id="codigo" value="{{ $disciplina->codigo }}" required>
+                                <input class="mb-2"  type="text" name="codigo" id="codigo" value="{{ $disciplina->codigo }}" required style="border-radius: 10px;">
                             </td>
                         </tr>
                         <tr>
@@ -35,7 +35,7 @@
                                 <label for="ementa">Ementa da disciplina:</label>
                             </td>
                             <td>
-                                <input type="text" name="ementa" id="ementa" value="{{ $disciplina->ementa }}" required>
+                                <input class="mb-2"  type="text" name="ementa" id="ementa" value="{{ $disciplina->ementa }}" required style="border-radius: 10px;">
                             </td>
                         </tr>
                         <tr>
@@ -43,8 +43,8 @@
                                 <label for="bibliografia">Bibliografia da disciplina:</label>
                             </td>
                             <td>
-                                <input type="text" name="bibliografia" id="bibliografia"
-                                    value="{{ $disciplina->bibliografia }}" required>
+                                <input class="mb-2"  type="text" name="bibliografia" id="bibliografia"
+                                    value="{{ $disciplina->bibliografia }}" required style="border-radius: 10px;">
                             </td>
                         </tr>
                         <tr>
@@ -52,8 +52,8 @@
                                 <label for="carga_horaria">Carga horária da disciplina:</label>
                             </td>
                             <td>
-                                <input type="text" name="carga_horaria" id="carga_horaria"
-                                    value="{{ $disciplina->carga_horaria }}" required>
+                                <input class="mb-2"  type="text" name="carga_horaria" id="carga_horaria"
+                                    value="{{ $disciplina->carga_horaria }}" required style="border-radius: 10px;">
                             </td>
                         </tr>
                         <tr>
@@ -61,8 +61,8 @@
                                 <label for="creditos">Créditos da disciplina:</label>
                             </td>
                             <td>
-                                <input type="text" name="creditos" id="creditos" value="{{ $disciplina->creditos }}"
-                                    required>
+                                <input class="mb-2"  type="text" name="creditos" id="creditos" value="{{ $disciplina->creditos }}"
+                                    required style="border-radius: 10px;">
                             </td>
                         </tr>
                         <tr>
@@ -70,8 +70,8 @@
                                 <label for="pre_requisitos">Pré-requisitos da disciplina:</label>
                             </td>
                             <td>
-                                <input type="text" name="pre_requisitos" id="pre_requisitos"
-                                    value="{{ $disciplina->pre_requisitos }}" required>
+                                <input class="mb-2"  type="text" name="pre_requisitos" id="pre_requisitos"
+                                    value="{{ $disciplina->pre_requisitos }}" required style="border-radius: 10px;">
                             </td>
                         </tr>
                     </tbody>
