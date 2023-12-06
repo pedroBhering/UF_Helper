@@ -3,7 +3,8 @@
 @section('content')
     <div class="max-w-7xl mx-auto">
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-3">
-            <a href="{{ route('deptos.index') }}" class="btn btn-dark mr-2"><i style="color:white" class="fas fa-arrow-left"></i>
+            <a href="{{ route('deptos.index') }}" class="btn btn-dark mr-2"><i style="color:white"
+                    class="fas fa-arrow-left"></i>
                 <button style="color: white" type="submit">Voltar</button>
             </a>
             <h1>Disciplinas de {{ $depto->nome }}</h1>
@@ -47,12 +48,13 @@
                     </div>
                 @endforeach
             </ul>
-            <div class="calendario bg-white overflow-hidden sm:rounded-lg p-3" style="flex-direction:column;display:flex; justify-content:center">
+            <div class="calendario bg-white overflow-hidden sm:rounded-lg p-3"
+                style="flex-direction:column;display:flex; justify-content:center">
                 <h1>Calendario</h1>
                 <div class="calendario-img">
                     <img class="mb-3 shadow-lg w-1/2 mx-auto" src="{{ asset('img/calendario.jpg') }}" alt="Calendario">
                 </div>
-                
+
             </div>
 
         </div>

@@ -6,17 +6,19 @@
                     <a href="{{ route('deptos.index') }}" class="btn btn-dark mr-2 mt-2"><i class="fas fa-home"></i>
                         <button type="submit">Home</button>
                     </a>
-                </li>    
+                </li>
 
                 <li class="nav-item">
                     <form action="{{ route('disciplinas.index') }}" method="GET">
                         <button class="btn btn-dark mr-2 mt-1" type="submit">Buscar</button>
-                        <input type="text" class="mr-2 mt-1" name="search" placeholder="Buscar disciplinas">
+                        <input type="text" class="mr-2 mt-1" name="search" placeholder="Buscar disciplinas"
+                            style="border-radius: 10px;">
                     </form>
                 </li>
 
                 <li class="nav-item">
-                    <a href="https://www2.ufjf.br/biblioteca/" class="btn btn-dark mr-2 mt-2"><i class="fas fa-book"></i>
+                    <a href="https://www2.ufjf.br/biblioteca/" class="btn btn-dark mr-2 mt-2"><i
+                            class="fas fa-book"></i>
                         <button type="submit">Biblioteca</button>
                     </a>
                 </li>
@@ -43,7 +45,8 @@
                 <li class="nav-item">
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
-                        <button class="btn btn-dark mr-2 mt-2" type="submit"><i class="fas fa-cancel"></i> Logout</button>
+                        <button class="btn btn-dark mr-2 mt-2" type="submit"><i class="fas fa-cancel"></i>
+                            Logout</button>
                     </form>
                 </li>
             </ul>
