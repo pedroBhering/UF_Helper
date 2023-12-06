@@ -44,6 +44,14 @@
                     </div>
                 @endforeach
             </ul>
+            <div class="calendario bg-white overflow-hidden sm:rounded-lg p-3" style="flex-direction:column;display:flex; justify-content:center">
+                <h1>Calendario</h1>
+                <div class="calendario-img">
+                    <img class="mb-3 shadow-lg w-1/2 mx-auto" src="{{ asset('img/calendario.jpg') }}" alt="Calendario">
+                </div>
+                
+            </div>
+
         </div>
     </div>
 @endsection
