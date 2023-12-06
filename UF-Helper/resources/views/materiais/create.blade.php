@@ -16,7 +16,7 @@
                     </div>
 
                     <div class="pb-3">
-                        <label for="descricao">Descricao do material:</label>
+                        <label for="descricao">Descrição do material:</label>
                         <input type="text" name="descricao" id="descricao" value="" required>
                     </div>
 

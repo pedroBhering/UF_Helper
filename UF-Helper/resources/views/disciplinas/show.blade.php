@@ -3,8 +3,8 @@
 @section('content')
     <div class="max-w-7xl mx-auto">
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-3">
-            <a href="{{ route('deptos.show', $disciplina->depto_id) }}" class=" ml-2 btn btn-dark mr-2">
-                <button style="color: white" type="submit">Cancelar</button>
+            <a href="{{ route('deptos.show', $disciplina->depto_id) }}" class=" ml-2 btn btn-dark mr-2"><i style="color:white" class="fas fa-arrow-left"></i>
+                <button style="color: white" type="submit">Voltar</button>
             </a> 
             <h1>Informacoes da Disciplina</h1>
             <table>
@@ -20,7 +20,7 @@
                         <td>{{ $disciplina->nome }}</td>
                     </tr>
                     <tr>
-                        <td><strong>Codigo:</strong></td>
+                        <td><strong>Código:</strong></td>
                         <td>{{ $disciplina->codigo }}</td>
                     </tr>
                     <tr>
@@ -32,11 +32,11 @@
                         <td>{{ $disciplina->bibliografia }}</td>
                     </tr>
                     <tr>
-                        <td><strong>Carga Horaria:</strong></td>
+                        <td><strong>Carga Horária:</strong></td>
                         <td>{{ $disciplina->carga_horaria }}</td>
                     </tr>
                     <tr>
-                        <td><strong>Creditos:</strong></td>
+                        <td><strong>Créditos:</strong></td>
                         <td>{{ $disciplina->creditos }}</td>
                     </tr>
                     <tr>

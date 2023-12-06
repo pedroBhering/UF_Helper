@@ -20,7 +20,7 @@
                             <!-- Seus botões aqui -->
                             <a href="{{ route('materiais.show', $material->id) }}" class="btn btn-dark mr-2"><i
                                     class="fas fa-eye"></i>
-                                <button type="submit">Informacoes</button>
+                                <button type="submit">Informações</button>
                             </a>
                             @can('update', $user)
                                 <a href="{{ route('materiais.edit', $material->id) }}" class="btn btn-dark btn-edit mr-2"><i

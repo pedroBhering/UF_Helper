@@ -27,7 +27,7 @@
                             </a>
                             <a href="{{ route('disciplinas.show', $disciplina->id) }}"
                                 class="btn btn-dark mr-2 flex-grow"><i class="fas fa-eye"></i>
-                                <button type="submit">Informacoes</button>
+                                <button type="submit">Informações</button>
                             </a>
                             @can('update', $user)
                                 <a href="{{ route('disciplinas.edit', $disciplina->id) }}" class="btn btn-dark btn-edit mr-2"><i

@@ -13,12 +13,12 @@ class DisciplinaController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        $search = $request->get('search');
+        $disciplinas = Disciplinas::where('nome', 'like', "%{$search}%")->get();
         $user = Auth::user();
-        $disciplinas = Disciplinas::all();
-        $deptos = Deptos::all();
-        return view('disciplinas.index', compact('disciplinas', 'user', 'deptos'));
+        return view('disciplinas.index',compact('disciplinas','user','search'));
     }
 
     /**
