@@ -19,10 +19,10 @@
                 <tbody>
                     @foreach ($deptos as $depto)
                         <tr>
-                            <td>{{ $depto->id }}</td>
-                            <td>{{ $depto->nome }}</td>
-                            <td>{{ $depto->email }}</td>
-                            <td>
+                            <td class="pr-3">{{ $depto->id }}</td>
+                            <td class="pr-3">{{ $depto->nome }}</td>
+                            <td class="pr-3">{{ $depto->email }}</td>
+                            <td class="pr-3">
                                 {{-- <form action="{{ route('disciplinas.index') }}" method="GET"> --}}
                                 <a href="{{ route('deptos.show', $depto->id) }}" class="btn btn-dark mr-2"><i
                                         class="fas fa-eye"></i>
