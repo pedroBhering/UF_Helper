@@ -68,7 +68,7 @@ class DisciplinaController extends Controller
         $data = $request->all();
         $disciplina = Disciplinas::find($disciplina_id);
         $disciplina->update($data);
-        return redirect()->route('deptos.show',['depto'=>$disciplina->depto_id])->with('success', true);
+        return redirect()->route('deptos.show',['depto_id'=>$disciplina->depto_id])->with('success', true);
     }
 
     /**
