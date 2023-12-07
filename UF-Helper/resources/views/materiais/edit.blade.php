@@ -8,65 +8,57 @@
                 @method('PATCH')
                 @csrf
 
-                <table>
-                    <div class="flex flex-column">
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th></th>
-                        </thead>
-                        <tbody>
-                            <tr>
-
-                                <td>
-                                    <label for="nome">Nome do material:</label>
-                                </td>
-                                <td>
-                                    <input class="mb-2"  type="text" name="nome" id="nome" value="{{ $material->nome }}" required style="border-radius: 10px;">
-                                </td>
-                            </tr>
-
-
-                            <tr>
-                                <td>
-                                    <label for="descricao">Descricao do material:</label>
-                                </td>
-                                <td>
-                                    <input class="mb-2"  type="text" name="descricao" id="descricao" value="{{ $material->descricao }}" required style="border-radius: 10px;">
-                                </td>
-                            </tr>
-
-
-                            <tr>
-                                <td>
-                                    <label for="link">Link do material:</label>
-                                </td>
-                                <td>
-                                    <input class="mb-2"  style="border-radius: 10px;" type="text" name="link" id="link" value="{{ $material->link }}"
-                                        required>
-                                </td>
-                            </tr>
-
-
-
-                            <tr>
-                                <td>
-                                    <label for="autor_id">Autor do material:</label>
-                                </td>
-                                <td>
-                                    <select class="mb-2"  style="border-radius: 10px;" name="autor_id" id="autor_id">
-                                        @foreach ($autores as $autor)
-                                            <option value="{{ $autor->id }}"
-                                                {{ $autor->id == $material->autor_id ? 'selected' : '' }}>
-                                                {{ $autor->nome }}</option>
-                                        @endforeach
-                                    </select>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </div>
-                </table>
-
+                <div class="flex justify-center">
+                    <table>
+                        <div class="flex flex-column">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th></th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <label for="nome">Nome do material:</label>
+                                    </td>
+                                    <td>
+                                        <input class="mb-2" type="text" name="nome" id="nome" value="{{ $material->nome }}" required style="border-radius: 10px;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="pr-3">
+                                        <label for="descricao">Descrição do material:</label>
+                                    </td>
+                                    <td>
+                                        <input class="mb-2" type="text" name="descricao" id="descricao" value="{{ $material->descricao }}" required style="border-radius: 10px;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="link">Link do material:</label>
+                                    </td>
+                                    <td>
+                                        <input class="mb-2" style="border-radius: 10px;" type="text" name="link" id="link" value="{{ $material->link }}" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="autor_id">Autor do material:</label>
+                                    </td>
+                                    <td>
+                                        <select class="mb-2" style="border-radius: 10px;" name="autor_id" id="autor_id">
+                                            @foreach ($autores as $autor)
+                                                <option value="{{ $autor->id }}" {{ $autor->id == $material->autor_id ? 'selected' : '' }}>
+                                                    {{ $autor->nome }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </div>
+                    </table>
+                </div>
 
                 <div style="display: flex; justify-content: center;">
                     <a href="{{ route('disciplinas.materiais', $material->disciplina_id) }}"

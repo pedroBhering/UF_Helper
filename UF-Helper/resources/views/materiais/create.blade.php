@@ -9,7 +9,7 @@
 
                 <input type="hidden" name="disciplina_id" value="{{ $disciplina_id }}">
 
-                <table>
+                <table class="mx-auto">
                     <div class="flex flex-column">
                         <thead>
                             <tr>
@@ -27,8 +27,8 @@
                                 </td>
                             </tr>
 
-                            <tr>
-                                <td>
+                            <tr >
+                                <td class="pr-3">
                                     <label for="descricao">Descricao do material:</label>
                                 </td>
                                 <td>
@@ -47,8 +47,6 @@
                                 </td>
                             </tr>
 
-
-
                             <tr>
                                 <td>
                                     <label for="link">Link do material:</label>
@@ -58,8 +56,6 @@
                                         required style="border-radius: 10px;">
                                 </td>
                             </tr>
-
-
 
                             <tr>
                                 <td>

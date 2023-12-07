@@ -8,7 +8,7 @@
                 <button style="color: white" type="submit">Voltar</button>
             </a>
 
-            <h1>Informacoes de Material</h1>
+            <h1>Informações do Material</h1>
 
             <p><strong>Nome:</strong> {{ $material->nome }}</p>
             <p><strong>Tipo:</strong> {{ $material->tipo }}</p>
@@ -18,7 +18,7 @@
 
             <hr style="border: 2px solid black;">
 
-            <h2>Comentarios</h2>
+            <h2>Comentários</h2>
 
             <div class="mb-3">
                 <a href="{{ route('comments.create', $material->id) }}" class="btn btn-dark mr-2 btn-add"><i
